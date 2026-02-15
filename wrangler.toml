@@ -1,0 +1,19 @@
+name = "ignition-engine"
+type = "webpack"
+account_id = "" # Add Cloudflare Account ID here
+workers_dev = true
+route = "" # Add route here if using custom domain
+zone_id = "" # Add Zone ID here if using custom domain
+
+[site]
+bucket = "./dist"
+entry-point = "workers-site"
+
+[build]
+command = "npm run build"
+
+# Enable WebAssembly support
+[wasm_modules]
+ignition_core = "./packages/ignition-core/pkg/ignition_core_bg.wasm"
+
+# Essential for SharedArrayBuffer support in Workers/Pages if applicable (though usually set via headers/routes)

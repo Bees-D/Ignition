@@ -16,14 +16,61 @@ Ignition provides the core infrastructure for high-fidelity media streaming, clo
 - **Developer-First API**: Granular hooks and toggles for frontend developers to build custom experiences.
 - **Multi-Platform Support**: Optimized for deployment on Vercel, Netlify, Cloudflare, and Replit.
 
-## 🛠️ Technology Stack
+## 🏗️ Building from Source (Local Development)
 
-- **Kernel**: TypeScript (Service Worker based)
-- **Rewriter**: Rust / WASM (SIMD optimized)
-- **Networking**: Wisp over WSS
-- **Persistence**: IndexedDB (Virtual Cookie Jar)
+Ignition is a monorepo consisting of the Kernel (Service Worker), Core (Rust/WASM), and Sandbox (Injection Script). To build the engine locally and integrate it into your own frontend:
 
-## 🏗️ Getting Started (The Universal SDK)
+1. **Clone the Repository:**
+```bash
+git clone https://github.com/Bees-D/Ignition.git
+cd Ignition/Ignition
+```
+
+2. **Install Dependencies:**
+```bash
+npm install
+```
+
+3. **Build the Engine:**
+This compiles the Rust core to WASM and bundles the TypeScript kernel/sandbox.
+```bash
+npm run build
+```
+
+4. **Integration (Copying Artifacts):**
+After building, copy the following files from `dist/` or `packages/*/dist` to your frontend's `public/` directory:
+- `ignition.bundle.js` (The Universal SDK)
+- `ignition.sw.js` (The Service Worker Kernel)
+- `ignition_core_bg.wasm` (The Rust/WASM Binary)
+
+---
+
+## 🚀 Deployment (Cloud & Edge)
+
+Ignition is optimized for edge deployment on Vercel and Cloudflare.
+
+### ▲ Vercel Deployment
+A `vercel.json` is included for zero-config deployment with required COOP/COEP headers (essential for `SharedArrayBuffer` support).
+
+1. **Push to GitHub.**
+2. **Import Project to Vercel.**
+3. **Add Environment Variable:** `RUST_VERSION=stable` (if needed for custom builds, though pre-compiled WASM is recommended).
+4. **Deploy.**
+
+### ☁️ Cloudflare Workers / Pages
+A `wrangler.toml` is included for deployment on Cloudflare's edge network.
+
+1. **Install Wrangler:** `npm install -g wrangler`
+2. **Login:** `wrangler login`
+3. **Publish:**
+```bash
+wrangler publish
+```
+*Note: Ensure your Cloudflare account has Workers Paid plan if high-CPU usage is expected, though free tier supports basic Wisp traffic.*
+
+---
+
+## ⚡ Frontend Integration (Quick Start)
 
 Ignition v3.0 features a "One-Step" interface designed to handle navigation, search, and stealth with zero developer overhead.
 
