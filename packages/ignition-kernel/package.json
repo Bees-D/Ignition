@@ -13,8 +13,8 @@
     },
     "dependencies": {
         "@ignition/core": "*",
-        "@mercuryworkshop/epoxy-transport": "latest",
-        "wisp-js": "latest"
+        "@mercuryworkshop/epoxy-transport": "git+https://github.com/mercuryworkshop/epoxy-tls.git",
+        "wisp-js": "github:mercuryworkshop/wisp-js"
     },
     "devDependencies": {
         "tsup": "^8.0.2",

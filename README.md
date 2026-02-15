@@ -32,16 +32,17 @@ npm install
 ```
 
 3. **Build the Engine:**
-This compiles the Rust core to WASM and bundles the TypeScript kernel/sandbox.
+This compiles the Rust core to WASM and bundles the TypeScript kernel/sandbox. The project uses a cross-platform build orchestrator (`scripts/build.js`).
 ```bash
 npm run build
 ```
 
 4. **Integration (Copying Artifacts):**
-After building, copy the following files from `dist/` or `packages/*/dist` to your frontend's `public/` directory:
-- `ignition.bundle.js` (The Universal SDK)
+The build process automatically generates a `dist/` folder in the root. Copy these files to your own frontend project's `public/` directory:
+- `ignition.bundle.js` (The Universal SDK/Sandbox)
 - `ignition.sw.js` (The Service Worker Kernel)
 - `ignition_core_bg.wasm` (The Rust/WASM Binary)
+- `index.html` (A basic demo/test page)
 
 ---
 

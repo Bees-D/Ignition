@@ -19,7 +19,7 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
+    "build": "node scripts/build.js",
     "dev": "npm run dev --workspaces --if-present",
     "test": "npm run test --workspaces --if-present"
   }
