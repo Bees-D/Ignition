@@ -1,6 +1,11 @@
 # Ignition Virtual Browser Engine
 
-Ignition is a high-performance, universal virtual browser engine built for the next generation of web applications. It provides the core infrastructure for high-fidelity media streaming, cloud gaming, and advanced stealth browsing.
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
+![Status: Production](https://img.shields.io/badge/Status-Production-green)
+
+**Ignition** is a high-fidelity, steganographic virtual browser environment engineered for evasion and privacy. It is open-source software (AGPL-3.0), designed to be deployed and modified freely like Ultraviolet or Scramjet.
+
+Ignition provides the core infrastructure for high-fidelity media streaming, cloud gaming, and advanced stealth browsing on managed networks.
 
 ## 🚀 Key Features
 
