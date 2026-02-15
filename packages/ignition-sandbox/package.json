@@ -1,0 +1,14 @@
+{
+    "name": "@ignition/sandbox",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Ignition Evasion & Stealth Sandbox",
+    "scripts": {
+        "build": "tsup src/index.ts --format iife --minify",
+        "dev": "tsup src/index.ts --format iife --watch"
+    },
+    "devDependencies": {
+        "tsup": "^8.0.2",
+        "typescript": "^5.3.3"
+    }
+}
